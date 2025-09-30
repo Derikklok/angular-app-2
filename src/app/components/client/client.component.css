@@ -1,0 +1,24 @@
+.client__header{
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+p{
+    font-weight: 10px;
+    color: rgb(154, 154, 154);
+}
+
+.client__body{
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 15px;
+    padding: 2rem;
+}
+.hanlde_care_text{
+    margin-top: -9px;
+}
+#header3{
+    color: rgb(225, 154, 0);
+}

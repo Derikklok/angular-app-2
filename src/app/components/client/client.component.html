@@ -1,1 +1,163 @@
-<p>client works!</p>
+<div class="client__header">
+  <h3 id="header3">Client Details!</h3>
+  <p>Manage All your Clients With Ease..</p>
+</div>
+
+<div class="client__body">
+  <h3>Dashboard</h3>
+  <p class="hanlde_care_text">Handle With Care..</p>
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header bg-dark text-light">Client List</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <table class="table table-bordered border-warning table-hover">
+                <thead class="table table-warning">
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>City</th>
+                    <th>PC</th>
+                    <th>State</th>
+                    <th>Ecount</th>
+                    <th>Contact</th>
+                    <th>Reg</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @for(client of clientList; track $index){
+                        <tr>
+                            <td>{{$index+1}}</td>
+                            <th>{{client.contactPersonName}}</th>
+                            <td>{{client.companyName}}</td>
+                            <td>{{client.city}}</td>
+                            <th>{{client.pincode}}</th>
+                            <td>{{client.state}}</td>
+                            <td>{{client.employeeStrength}}</td>
+                            <th>{{client.contactNo}}</th>
+                            <td>{{client.regNo}}</td>
+                          </tr>
+                    }
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <!-- Add new Client Form -->
+        <div class="card-header bg-warning">New Client</div>
+        <!-- form body -->
+        <div class="card-body">
+          <div class="row">
+            <!-- Contact Person Name -->
+            <div class="col-6">
+              <label for="">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.contactPersonName"
+              />
+            </div>
+            <!-- Company Name -->
+            <div class="col-6">
+              <label for="">Company</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.companyName"
+              />
+            </div>
+            <!-- Contact No -->
+            <div class="col-6">
+              <label for="">Contact No</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.contactNo"
+              />
+            </div>
+            <!-- Address -->
+            <div class="col-6">
+              <label for="">Address</label>
+              <textarea
+                name=""
+                id=""
+                class="form-control"
+                [(ngModel)]="clientObj.address"
+              ></textarea>
+            </div>
+            <!-- city -->
+            <div class="col-6">
+              <label for="">City</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.city"
+              />
+            </div>
+            <!-- pincode -->
+            <div class="col-6">
+              <label for="">Pin code</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.pincode"
+              />
+            </div>
+            <!-- State -->
+            <div class="col-6">
+              <label for="">State</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.state"
+              />
+            </div>
+            <!-- Employee count -->
+            <div class="col-6">
+              <label for="">Emp Count</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.employeeStrength"
+              />
+            </div>
+            <!-- gst -->
+            <div class="col-6">
+              <label for="">GST no</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.gstNo"
+              />
+            </div>
+            <!-- reg no -->
+            <div class="col-6">
+              <label for="">Reg. No</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="clientObj.regNo"
+              />
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-6">
+              <button class="btn btn-warning">Save client</button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-secondary">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
