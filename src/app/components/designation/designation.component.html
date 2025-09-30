@@ -1,1 +1,22 @@
-<p>designation works!</p>
+<h3>Available Designations</h3>
+
+<div class="row">
+  <div class="col-10">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Designation Id</th>
+          <th>Designation Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let designation of designationList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ designation.designationId }}</td>
+          <td>{{ designation.designation }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

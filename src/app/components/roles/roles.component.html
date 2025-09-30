@@ -1,6 +1,53 @@
-<h1>Available Roles</h1>
+<h3>Available Roles</h3>
 
 <div class="row">
+    <div class="col-10">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Role Id</th>
+                    <th>Role Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let role of roleList; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{role.roleId}}</td>
+                    <td>{{role.role}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
   <div class="col-4">
     <ul>
       <li *ngFor="let item of roleList">{{item.role}}</li>
@@ -12,7 +59,7 @@
         <option *ngFor="let role of roleList" [value]="role.roleId">{{role.role}}</option>
     </select>
   </div>
-</div>
+</div> -->
 
 
 
