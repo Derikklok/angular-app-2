@@ -3,17 +3,30 @@
   <p>Manage All your Clients With Ease..</p>
 </div>
 
+<!-- Toast -->
+<div *ngIf="showToast" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1080;">
+  <div class="toast show text-white" [ngClass]="toastType === 'success' ? 'bg-success' : 'bg-danger'">
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ toastMessage }}
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" (click)="showToast=false"></button>
+    </div>
+  </div>
+  </div>
+
 <div class="client__body">
   <h3>Dashboard</h3>
   <p class="hanlde_care_text">Handle With Care..</p>
-  <div class="row">
-    <div class="col-8">
+  <div class="row g-3">
+    <div class="col-12 col-lg-8">
       <div class="card">
         <div class="card-header bg-dark text-light">Client List</div>
         <div class="card-body">
           <div class="row">
             <div class="col-12">
-              <table class="table table-bordered border-warning table-hover">
+              <div class="table-responsive">
+              <table class="table table-bordered border-warning table-hover align-middle mb-0">
                 <thead class="table table-warning">
                   <tr>
                     <th>#</th>
@@ -44,118 +57,140 @@
                  
                 </tbody>
               </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-12 col-lg-4">
       <div class="card">
         <!-- Add new Client Form -->
         <div class="card-header bg-warning">New Client</div>
         <!-- form body -->
         <div class="card-body">
-          <div class="row">
+          <form #clientForm="ngForm" (ngSubmit)="onSaveClient()">
+          <div class="row g-3">
             <!-- Contact Person Name -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">Name</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Add customer"
+                name="contactPersonName"
                 [(ngModel)]="clientObj.contactPersonName"
               />
             </div>
             <!-- Company Name -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">Company</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Add company"
+                name="companyName"
                 [(ngModel)]="clientObj.companyName"
               />
             </div>
             <!-- Contact No -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">Contact No</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Add Mobile"
+                name="contactNo"
                 [(ngModel)]="clientObj.contactNo"
               />
             </div>
             <!-- Address -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">Address</label>
               <textarea
                 name=""
                 id=""
                 class="form-control"
+                placeholder="Add address"
+                name="address"
                 [(ngModel)]="clientObj.address"
               ></textarea>
             </div>
             <!-- city -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">City</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Add city"
+                name="city"
                 [(ngModel)]="clientObj.city"
               />
             </div>
             <!-- pincode -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">Pin code</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Create Pin"
+                name="pincode"
                 [(ngModel)]="clientObj.pincode"
               />
             </div>
             <!-- State -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">State</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Enter State"
+                name="state"
                 [(ngModel)]="clientObj.state"
               />
             </div>
             <!-- Employee count -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">Emp Count</label>
               <input
                 type="text"
                 class="form-control"
+                name="employeeStrength"
                 [(ngModel)]="clientObj.employeeStrength"
               />
             </div>
             <!-- gst -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">GST no</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Add GST"
+                name="gstNo"
                 [(ngModel)]="clientObj.gstNo"
               />
             </div>
             <!-- reg no -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <label for="">Reg. No</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Add Registration No"
+                name="regNo"
                 [(ngModel)]="clientObj.regNo"
               />
             </div>
           </div>
-          <div class="row pt-3">
-            <div class="col-6">
-              <button class="btn btn-warning">Save client</button>
+          <div class="row pt-3 g-2">
+            <div class="col-12 col-sm-6">
+              <button type="submit" class="btn btn-warning">Save client</button>
             </div>
-            <div class="col-6">
-              <button class="btn btn-secondary">Reset</button>
+            <div class="col-12 col-sm-6">
+              <button type="button" class="btn btn-secondary" (click)="onReset(clientForm)">Reset</button>
             </div>
           </div>
+          </form>
         </div>
       </div>
     </div>

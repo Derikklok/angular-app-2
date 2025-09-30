@@ -22,3 +22,15 @@ p{
 #header3{
     color: rgb(225, 154, 0);
 }
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .client__body {
+    padding: 1rem;
+  }
+}
+
+/* Avoid table spilling on small screens */
+.table-responsive {
+  overflow-x: auto;
+}
