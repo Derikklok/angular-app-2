@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-12 text-center">
-    <div class="btn-group">
+    <div class="btn-group ">
       <button
         type="button"
-        class="btn border"
+        class="btn border rounded-start-5"
         (click)="changeTab('Roles')"
         [ngClass]="currentComponent == 'Roles' ? 'btn-dark' : 'btn-light'"
       >
@@ -11,7 +11,7 @@
       </button>
       <button
         type="button"
-        class="btn btn-light border"
+        class="btn btn-light border rounded-end-5"
         (click)="changeTab('Designations')"
         [ngClass]="
           currentComponent == 'Designations' ? 'btn-dark' : 'btn-light'

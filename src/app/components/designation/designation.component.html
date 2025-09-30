@@ -1,9 +1,17 @@
 <h3>Available Designations</h3>
 
 <div class="row">
+  @if (isLoader) {
+  <div class="col-12 text-center">
+    <div class="spinner-grow spinner-grow-sm text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  }@else {
+
   <div class="col-10">
     <table class="table table-bordered table-hover">
-      <thead>
+      <thead class="table-warning">
         <tr>
           <th>#</th>
           <th>Designation Id</th>
@@ -19,4 +27,6 @@
       </tbody>
     </table>
   </div>
+
+  }
 </div>
